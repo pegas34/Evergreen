@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Test page</title>
+    <link rel="stylesheet" href="css/style.min.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css" media="screen" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700" rel="stylesheet" />
+</head>
+
+<body>
+
+<section id="top" class="relative">
+    <div class="top-wrap" class="relative">
+        <header class="relative">
+            <h1>Добриво</h1>
+            <div class="language-block">
+                <span id="language-current">RU</span><span class="fa-angle-down"></span>
+                <div class="language-hide">
+                    <span data-lang="RU" class="dnone">RU</span>
+                    <span data-lang="UK">UK</span>
+                    <span data-lang="EN">EN</span>
+                </div>
+            </div>
+            <div id="mobile-nav">
+                <span class="fa-bars"></span>
+            </div>
+        </header>
+        <nav id="nav-block" class="relative">
+            <ul id="main-nav">
+                <li>
+                    <a href="">Нагро-удобрение <span class="fa-caret-right"></span></a>
+                </li><li>
+                    <a href="">Биодизель <span class="fa-caret-right"></span></a>
+                </li><li>
+                    <a href="">Силко <span class="fa-caret-right"></span></a>
+                </li><li>
+                    <a href="">Интернет-магазин <span class="fa-caret-right"></span></a>
+                </li><li>
+                    <a href="">Вопросы-ответы <span class="fa-caret-right"></span></a>
+                </li><li>
+                    <a href="">Контакты <span class="fa-caret-right"></span></a>
+                </li>
+            </ul>
+            <ul id="top-nav">
+                <li><a href="">Оплата и доставка</a></li>
+                <li><a href="">Новости</a></li>
+                <li><a href="">Справочник</a></li>
+                <li><a href="">Сертификаты</a></li>
+            </ul>
+            <div class="cart">
+                <a href=""><span class="fa-shopping-cart"></span> Корзина</a>
+            </div>
+        </nav>
+    </div>
+    <div id="bg-slider"></div>
+</section>
+<section id="main" class="relative">
+    <div class="main-wrap relative">
+        <h2>
+            <span>Органическое</span>
+            <span>нано-удобние</span>
+            <span>Добриво</span>
+        </h2>
+        <div class="info-block">
+            <img src="img/fertilizer.png" alt="" />
+            <div>
+                <ul>
+                    <li>
+                        <i class="fa-star"></i>
+                        <b>Прирост урожая</b>
+                        <small>в сравнении с химическим удобрением</small>
+                        <span>30%-250%</span>
+                    </li>
+                    <li>
+                        <i class="fa-star"></i>
+                        <b>Экономия</b>
+                        <small>химических удобрений в хозяйстве</small>
+                        <span>до 70%</span>
+                    </li>
+                    <li>
+                        <i class="fa-star"></i>
+                        <b>Рост корневой</b>
+                        <small>системы растений при использовании</small>
+                        <span>в 3-10 раз</span>
+                    </li>
+                </ul>
+                <p>Узнайте<br /> о Нагро больше!</p>
+                <button>Узнать больше</button>
+            </div>
+        </div>
+        <div class="right-block">
+            <div class="calculator-block">
+                <div class="calculator-wrap">
+                    <p class="h3">Посчитайте прибыль</p>
+                    <p class="info relative"><b>Добриво</b> эффективнее химии</p>
+                    <form>
+                        <label>
+                            <span>Выберите культуру</span>
+                            <span class="select">
+                                <select name="price">
+                                    <option value="3100">Пшеница ~ 3100 грн/т</option>
+                                    <option value="3000">Овес ~ 3000 грн/т</option>
+                                    <option value="3400">Гречиха ~ 3400 грн/т</option>
+                                    <option value="3050">Ячмень ~ 3050 грн/т</option>
+                                    <option value="3200">Кукуруза ~ 3200 грн/т</option>
+                                </select>
+                                <span class="fa-caret-down"></span>
+                            </span>
+                        </label>
+                        <label>
+                            <span>Урожайность, ц/га</span>
+                            <input type="text" name="bulk" placeholder="20" value="20" maxlength="3" />
+                            <span class="error dnone"></span>
+                        </label>
+                        <label>
+                            <span>Стоимость хим.удобрения, грн/га</span>
+                            <input type="text" name="cost" placeholder="3000" value="3000" maxlength="4" />
+                            <span class="error dnone"></span>
+                        </label>
+                        <label>
+                            <span>Посевная площадь, га</span>
+                            <input type="text" name="area" placeholder="10" value="10" maxlength="4" />
+                            <span class="error dnone"></span>
+                        </label>
+                        <div class="total relative">
+                            <span>Прибыль от Добрива</span>
+                            <b id="calc-total">32 000</b>
+                            грн
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bg-main"></div>
+</section>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/page.js"></script>
+
+</body>
+</html>

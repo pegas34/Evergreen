@@ -1,0 +1,22 @@
+@mixin clearfix {
+    &:after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+}
+
+@mixin simple-gradient_vertical ($color-first, $color-last) {
+    background: -moz-linear-gradient(top, $color-first 0%, $color-last 100%);
+    background: -webkit-linear-gradient(top, $color-first 0%, $color-last 100%);
+    background: linear-gradient(to bottom, $color-first 0%, $color-last 100%);
+}
+
+@mixin fa-icon() {
+    display: inline-block;
+    font: normal normal normal #{$fa-css-size}/#{$fa-css-height} FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}

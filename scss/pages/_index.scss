@@ -1,0 +1,519 @@
+html,
+body {
+    font-size: 15px;
+    font-family: 'Roboto', Arial, sans-serif;
+    font-weight: 300;
+    color: $nero;
+}
+.bold {
+    font-weight: 500;
+}
+.dnone {
+    display: none !important;
+}
+.relative {
+    position: relative;
+}
+
+#top {
+    .top-wrap {
+        width: 100%;
+        max-width: 1030px;
+        margin: 0 auto;
+        padding: 0 15px;
+        box-sizing: border-box;
+        height: 415px;
+
+        @include clearfix;
+    }
+
+    header {
+        height: 115px;
+        z-index: 2;
+
+        &.lang-up {
+            z-index: 3;
+        }
+        #mobile-nav {
+            position: absolute;
+            top: 30px;
+            right: 0;
+            display: none;
+        }
+        .fa-bars {
+            font-size: 28px;
+            color: $white;
+        }
+    }
+    h1 {
+        position: absolute;
+        bottom: 10px;
+        left: 0;
+        font-family: 'Roboto Condensed', Arial, sans-serif;
+        font-weight: 700;
+        font-size: 50px;
+        text-transform: uppercase;
+        color: $white;
+        line-height: 1.2;
+        cursor: default;
+    }
+    #nav-block {
+        margin: 0 auto;
+        height: 50px;
+        padding-right: 180px;
+        background: #fefefe;
+        clear: both;
+        box-shadow: 1px 1px 5px rgba($black, 0.6);
+        z-index: 2;
+        @include simple-gradient_vertical(#fefefe, #f2f2f2);
+
+        #top-nav {
+            position: absolute;
+            top: -45px;
+            right: 50px;
+            margin: 0;
+
+            li {
+                float: left;
+                margin: 0 35px 0 0;
+            }
+            a {
+                display: block;
+                padding: 3px 7px;
+                font-size: 11px;
+                color: $white;
+                text-decoration: none;
+                text-transform: uppercase;
+
+                &:hover {
+                    color: $mint_green;
+                }
+            }
+        }
+        #main-nav {
+/*
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-around;
+*/
+            height: 50px;
+            position: relative;
+            text-align: center;
+            overflow: hidden;
+
+            li {
+                display: inline-block;
+                margin: 0;
+                height: 50px;
+            }
+            a {
+                display: block;
+                height: 50px;
+                padding: 0 10px;
+                line-height: 50px;
+                white-space: nowrap;
+                text-decoration: none;
+                color: #6d6e71;
+                text-transform: uppercase;
+                font-family: 'Roboto Condensed', Arial, sans-serif;
+                font-weight: 700;
+
+                &:hover {
+                    color: $pastel_green;
+                }
+                .fa-caret-right {
+                    max-width: 4px;
+                    font-size: 10px;
+                    display: inline-block;
+                    margin: 0 0 0 5px;
+                    height: 12px;
+                    position: relative;
+                    top: -2px;
+                }
+            }
+        }
+        .cart {
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 180px;
+            margin: 0;
+
+            a {
+                display: block;
+                height: 50px;
+                padding: 0 10px;
+                color: $white;
+                text-align: center;
+                background-color: #648123;
+                line-height: 50px;
+                white-space: nowrap;
+                text-decoration: none;
+                text-transform: uppercase;
+                font-family: 'Roboto Condensed', Arial, sans-serif;
+                font-weight: 700;
+                @include simple-gradient_vertical(#52a828, #745d1e);
+
+                &:hover {
+                    background-color: #73962b;
+                    @include simple-gradient_vertical(#5fbe30, #866b24);
+                }
+            }
+            .fa-shopping-cart {
+                width: 21px;
+                height: 21px;
+                position: relative;
+                top: -1px;
+                margin-right: 3px;
+                padding: 4px;
+                border: 1px solid $white;
+                border-radius: 50%;
+                box-sizing: border-box;
+                font-size: 11px;
+                color: $white;
+                opacity: 0.4;
+            }
+        }
+    }
+    .language-block {
+        position: absolute;
+        top: 69px;
+        right: 0;
+        padding: 1px 0 2px;
+        background-color: transparent;
+        border: 1px solid $white;
+        font-size: 13px;
+        color: $white;
+        cursor: pointer;
+        z-index: 2;
+        transition: .2s all;
+
+        .fa-angle-down {
+            margin: 0 4px 0 2px;
+            font-size: 12px;
+        }
+
+        &.language-show {
+            background-color: rgba($black,0.4);
+
+            .language-hide {
+                height: 32px;
+            }
+        }
+    }
+    #language-current {
+        display: inline-block;
+        width: 27px;
+        text-align: center;
+    }
+    .language-hide {
+        width: 27px;
+        height: 0;
+        overflow: hidden;
+        transition: .2s height;
+
+        span {
+            display: block;
+            width: 27px;
+            text-align: center;
+
+            &:hover {
+                color: $mint_green;
+            }
+        }
+    }
+    #bg-slider {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-image: url('#{$img-path}/bg-header.jpg');
+        background-color: $neutral_green;
+        background-repeat: no-repeat;
+        background-position: center bottom;
+        height: 100%;
+        width: 100%;
+        z-index: 1;
+
+        span {
+            height: 100%;
+            width: 100%;
+            display: block;
+            background-image: url('#{$img-path}/bg-header2.jpg');
+            background-repeat: no-repeat;
+            background-position: center bottom;
+            opacity: 0;
+        }
+    }
+}
+
+#main {
+    background-color: $azure;
+
+    .main-wrap {
+        width: 100%;
+        max-width: 1030px;
+        margin: 0 auto;
+        padding: 0 15px;
+        box-sizing: border-box;
+        z-index: 2;
+
+        @include clearfix;
+    }
+    h2 {
+        position: absolute;
+        top: -165px;
+        left: 0;
+        font-family: 'Roboto Condensed', Arial, sans-serif;
+        font-size: 58px;
+        text-transform: uppercase;
+        color: $white;
+        line-height: 0.85;
+        font-weight: 700;
+
+        span {
+            display: block;
+
+            &:nth-child(1) {
+                padding-left: 90px;
+            }
+            &:nth-child(2) {
+                padding-left: 200px;
+            }
+            &:nth-child(3) {
+                padding-left: 265px;
+            }
+        }
+    }
+    .info-block {
+        width: 61.5%;
+        min-height: 250px;
+        float: left;
+        background-color: $azure;
+
+        & > img {
+            margin: -60px 0 0 25px;
+            width: 191px;
+            float: left;
+        }
+        & > div {
+            padding: 0 0 0 240px;
+        }
+        ul {
+            padding: 15px 0 20px;
+
+            li {
+                margin: 0 0 25px;
+                padding: 0 0 0 52px;
+                position: relative;
+            }
+            b {
+                display: block;
+                font-size: 25px;
+                font-family: 'Roboto Condensed', Arial, sans-serif;
+                color: $charcoal;
+                text-transform: uppercase;
+                font-weight: 600;
+            }
+            small {
+                display: block;
+                font-size: 11px;
+                color: $mischka;
+                line-height: 1;
+                margin: 0 0 5px;
+            }
+            span {
+                display: block;
+                font-size: 26px;
+                color: $fallow;
+            }
+        }
+        .fa-star {
+            position: absolute;
+            top: 0;
+            left: 0;
+            font-size: 34px;
+            color: $atlantis;
+        }
+        p {
+            font-size: 42px;
+            font-family: 'Roboto Condensed', Arial, sans-serif;
+            color: $oxford-blue;
+            text-transform: uppercase;
+            font-weight: 600;
+            line-height: 1.2;
+            margin: 0 0 20px;
+        }
+        button {
+            margin: 0 0 30px;
+            padding: 15px 30px;
+            background-color: transparent;
+            border: 5px solid $black;
+            font-size: 20px;
+            font-family: 'Roboto Condensed', Arial, sans-serif;
+            text-transform: uppercase;
+            font-weight: 600;
+            outline: none;
+            cursor: pointer;
+            transition: 0.2s all;
+
+            &:hover {
+                background-color: $white;
+                color: darken($pastel_green, 10%);
+                border-color: darken($pastel_green, 10%);
+            }
+        }
+    }
+    .right-block {
+        width: 38.5%;
+        min-height: 300px;
+        float: left;
+    }
+    .calculator-block {
+        width: 100%;
+        max-width: 320px;
+        margin: -190px 0 0;
+        padding: 12px;
+        background-color: $soft_peach;
+        box-sizing: border-box;
+        float: right;
+
+        .calculator-wrap {
+            background-color: $white_smoke;
+            border: 1px dashed $heather;
+            padding: 20px;
+        }
+        .h3 {
+            font-size: 36px;
+            font-family: 'Roboto Condensed', Arial, sans-serif;
+            text-transform: uppercase;
+            font-weight: 600;
+            color: $oxford-blue;
+            text-align: center;
+            line-height: 0.9;
+        }
+        .info {
+            font-size: 16px;
+            font-family: 'Roboto Condensed', Arial, sans-serif;
+            text-transform: uppercase;
+            color: $oxford-blue;
+            text-align: center;
+            margin: 15px 0 0;
+            padding: 0 0 15px;
+
+            &:after {
+                content: '';
+                display: block;
+                width: 170px;
+                height: 1px;
+                line-height: 0;
+                font-size: 0;
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                margin: 0 0 0 -85px;
+                background-color: lighten($heather, 5%);
+            }
+        }
+        form {
+            label {
+                display: block;
+                margin-top: 16px;
+            }
+            span {
+                display: block;
+                color: $oxford-blue;
+
+                &.error {
+                    color: $dark_coral;
+                    font-size: 80%;
+                }
+            }
+            input {
+                width: 100%;
+                padding: 0 7px;
+                box-sizing: border-box;
+                border: 1px solid $silver;
+                height: 30px;
+                border-radius: 2px;
+                box-shadow: 0 1px 5px rgba($black,0.1) inset;
+                margin-top: 5px;
+                font-size: 100%;
+            }
+            select {
+                width: 100%;
+                margin-top: -1px;
+                padding: 0 7px;
+                position: relative;
+                z-index: 1;
+                background-color: transparent;
+                border: 0;
+                height: 30px;
+                border-radius: 2px;
+                font-size: 100%;
+                appearance: none;
+                -webkit-appearance: none;
+                -moz-appearance: none;
+            }
+            .select {
+                display: block;
+                width: 100%;
+                box-sizing: border-box;
+                margin-top: 5px;
+                border: 1px solid $silver;
+                height: 30px;
+                border-radius: 2px;
+                box-shadow: 0 1px 5px rgba($black,0.1) inset;
+                background-color: $white;
+                position: relative;
+            }
+            .fa-caret-down {
+                position: absolute;
+                top: 7px;
+                right: 10px;
+            }
+        }
+        .total {
+            text-align: center;
+            margin: 15px 0 0;
+            padding: 10px 0 0;
+
+            span {
+                display: block;
+                color: $dark_coral;
+                text-transform: uppercase;
+            }
+            b {
+                display: block;
+                color: $dark_coral;
+                font-size: 46px;
+                white-space: nowrap;
+
+                &.small-price {
+                    font-size: 40px;
+                }
+            }
+            &:before {
+                content: '';
+                display: block;
+                width: 170px;
+                height: 1px;
+                line-height: 0;
+                font-size: 0;
+                position: absolute;
+                top: 0;
+                left: 50%;
+                margin: 0 0 0 -85px;
+                background-color: lighten($heather, 5%);
+            }
+        }
+    }
+    .bg-main {
+        width: 50%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        background: url('#{$img-path}/bg-main.jpg') 0 0 no-repeat;
+        background-size: cover;
+    }
+}
